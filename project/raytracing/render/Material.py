@@ -1,7 +1,7 @@
 from raytracing.math.Vector import Vector
 
 class Material:
-    def __init__(self, refractive_index = 1, albedo = [2, 0, 0, 0], diffuse_color = Vector(0, 0, 0), specular_exponent = 0):
+    def __init__(self, refractive_index = 1, albedo = [0.8, 0.2, 0.0, 0.0], diffuse_color = Vector(0, 255, 0), specular_exponent = 1):
         self._refractive_index = refractive_index       # Показатель преломления материала
         self._specular_exponent = specular_exponent     # Коэффициент блика материала
         self._diffuse_color = diffuse_color             # Цвет диффузного освещения материала

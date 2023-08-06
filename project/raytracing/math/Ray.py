@@ -2,17 +2,17 @@ from raytracing.math.Vector import Vector
 import math 
 
 class Ray:
-    def __init__(self, origin = Vector(), direction = Vector()):
-        self._origin = origin
-        self._direction = direction.normalize()
+    def __init__(self, position = Vector(), direction = Vector()):
+        self._position = position
+        self._direction = direction
 
     @property
-    def origin(self):
-        return self._origin
+    def position(self):
+        return self._position
 
-    @origin.setter
-    def origin(self, origin):
-        self._origin = origin
+    @position.setter
+    def origin(self, position):
+        self._position = position
 
     @property
     def direction(self):
@@ -20,7 +20,7 @@ class Ray:
 
     @direction.setter
     def direction(self, direction):
-        self._direction = direction.normalize()
+        self._direction = direction()
 
     # Метод для нахождения точки на луче по параметру t
     def point_at_parameter(self, t):

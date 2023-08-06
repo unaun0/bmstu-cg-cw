@@ -1,6 +1,6 @@
-from SceneObject import SceneObject
-from Vector import Vector
-from Material import Material
+from raytracing.scene.SceneObject import SceneObject
+from raytracing.math.Vector import Vector
+from raytracing.render.Material import Material
 
 class Cylinder(SceneObject):
     def __init__(self, center = Vector(), radius = 1, height = 1, material = Material()):
@@ -72,5 +72,5 @@ class Cylinder(SceneObject):
             return False, 0, 0
 
         pt = orig + dir * t
-        normal = Vec3(pt.x - self.center.x, 0, pt.z - self.center.z).normalized()
+        normal = Vector(pt.x - self.center.x, 0, pt.z - self.center.z).normalized()
         return True, t, normal

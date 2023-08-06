@@ -1,6 +1,6 @@
 from raytracing.scene.SceneObject import SceneObject
-from raytracing.rendering.LightSource import LightSource
-from raytracing.rendering.Camera import Camera
+from raytracing.render.LightSource import LightSource
+from raytracing.render.Camera import Camera
 
 class Scene:
     def __init__(self):
@@ -12,14 +12,18 @@ class Scene:
     def addObject(self, scene_object: SceneObject):
         self._sceneObjects.append(scene_object)
     
+    # Метод добавления объекта в сцену
+    def addCamera(self, scene_object: Camera):
+        self.camera = scene_object
+    
     # Метод добавления источника света в сцену
     def addLight(self, light_source: LightSource):
-        self.lightSources.append(light_source)
+        self._lightSources.append(light_source)
     
     # Метод для рендеринга сцены
     def render(self):
         pass
-
+    
     # Очищение сцены
     def clear(self):
         self._sceneObjects.clear()

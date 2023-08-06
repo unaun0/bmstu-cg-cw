@@ -49,21 +49,36 @@ class Vector:
     # Оператор унарного минуса
     def __neg__(self):
         return Vector(-self._x, -self._y, -self._z)
+    
+     # Оператор сложения векторов
+    def add(self, scalar):
+        return Vector(self._x + scalar, self.y + scalar, self.z + scalar)
 
-    # Оператор умножения векторов (скалярное произведение)
+    # Оператор сложения векторов
+    def sub(self, scalar):
+        return Vector(self._x - scalar, self.y - scalar, self.z - scalar)
+    
+    # Умножение векторов (векторное произведение)
+    def cross(self, v):
+        cross_x = self._y * v.z - self._z * v.y
+        cross_y = self._z * v.x - self._x * v.z
+        cross_z = self._x * v.y - self._y * v.x
+        return Vector(cross_x, cross_y, cross_z)
+
+    # Умножение векторов (скалярное произведение)
     def dot(self, v):
         return self._x * v.x + self._y * v.y + self._z * v.z
 
-    # Метод вычисления нормы (длины) вектора
+    # Вычисления нормы (длины) вектора
     def norm(self):
         return math.sqrt(self._x * self._x + self._y * self._y + self._z * self._z)
 
-    # Метод нормализации вектора
+    # Нормализация вектора
     def normalized(self):
         n = self.norm()
         return Vector(self._x / n, self._y / n, self._z / n)
     
-    # Перегрузки оператора представления объекта в виде строки
+    # Перегрузка оператора представления объекта в виде строки
     def __repr__(self):
         return f"Vector({self._x}, {self._y}, {self._z})"
     
