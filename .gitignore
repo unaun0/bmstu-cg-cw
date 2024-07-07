@@ -1,0 +1,18 @@
+# Игнорирование временных файлов компиляции
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+out/
+
+# Игнорирование сгенерированных файлов IDE
+.vscode/
+.idea/
+
+# Игнорирование сгенерированных файлов сборки CMake
+/CMakeFiles/
+/CMakeCache.txt
+/CMakeScripts/
+/CMakeSettings.json
