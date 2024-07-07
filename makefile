@@ -7,7 +7,7 @@ INC_FILES := $(wildcard $(INC_DIR)/*.hpp)
 SRC_FILES := $(wildcard $(SRC_DIR)/*.cpp)
 OBJ_FILES := $(SRC_FILES:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-EXEC_APP := app
+EXEC_APP := app.exe
 
 CXXFLAGS := -std=c++17 -Wall -Wpedantic -Wextra -Wconversion -I./inc -I/usr/local/include
 LDFLAGS := -lm
